@@ -45,6 +45,7 @@ Navigate to 'node-tolstoy' directory in the terminal and run:
  The server should be up and running.
 
 **3. Setup Frontend**
+
 Navigate to 'react-tolstoy' directory in the terminal and run:
   - npm install
   - npm start
