@@ -1,0 +1,42 @@
+.result {
+    border-radius: 0.3rem;
+    border: 1px solid var(--purple);
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    font-family: var(--second-font);
+    width: 30.5rem;
+}
+
+.result-img {
+    border: solid 2px var(--blue);
+    border-radius: 0.3rem;
+    width: 28rem;
+    margin-left: 0.6rem;
+    margin-bottom: 0.4rem;
+    margin-top: 0.8rem;
+}
+
+.result-header {
+    background-color: var(--purple);
+    color: white;
+    margin: 0;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+
+#err-result-header {
+    background-color: red;
+    font-size: 1.4rem;
+}
+
+#result-top-header {
+    background-color: var(--blue);
+    font-size: 1.4rem;
+}
+
+.result-txt {
+    font-family: var(--header-font);
+    margin: 0;
+    padding: 0.5rem;
+}

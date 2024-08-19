@@ -1,27 +1,21 @@
-import { useState } from "react";
-import '../css/InputURL.css'
 
-const InputURL = ({ url_list, setUrls, index }) => {
-    const [inputValue, setInputValue] = useState('');
+import '../css/InputURL.css';
 
+const InputURL = ({ value, onChange }) => {
     const handleChange = (e) => {
-        const value = e.target.value;
-        if (value.length > 0) {
-            setInputValue(value);
-            setUrls(prevUrls => [...prevUrls, [index, value.trim()]]);
-        }
+        onChange(e.target.value);
     };
 
     return (
         <div className="input-url">
             <input
                 type="url"
-                value={inputValue}
+                value={value}
                 placeholder="Enter URL"
                 onChange={handleChange}
             />
         </div>
-    )
-}
+    );
+};
 
-export default InputURL
+export default InputURL;

@@ -2,28 +2,46 @@ import Result from './Result'
 import InputURL from './InputUrl';
 import Loader from './Loader';
 import { useURL } from './URLProvider';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import '../css/Fetcher.css'
 
 const Fetcher = () => {
-    const storedURL = useURL();
-    const [urls, setUrls] = useState([]);
+    const { storedURL } = useURL();
     const [metadata, setMetadata] = useState([]);
     const [genErr, setGenErr] = useState('');
     const [counter, setCounter] = useState(3);
     const [loading, setLoading] = useState(false)
+    const [urlInputs, setUrlInputs] = useState([]);
+
+    useEffect(() => {
+        setUrlInputs([]);
+    }, []);
 
     const addField = (e) => {
         e.preventDefault();
-        if (counter < 11) {
+        if (counter < 10) {
             setCounter(counter + 1);
+            setUrlInputs([...urlInputs, '']);
         }
-    }
+    };
+
+    const handleInputChange = (index, value) => {
+        const updatedInputs = [...urlInputs];
+        updatedInputs[index] = value;
+        setUrlInputs(updatedInputs);
+    };
+
+    const collectURLs = () => {
+        return urlInputs
+            .map((url, index) => [index, url])
+            .filter(([_, url]) => url !== '');
+    };
 
     const FetchMetadata = async (e) => {
         e.preventDefault();
+        const collectedUrls = collectURLs();
 
-        if (urls.length < 1) {
+        if (collectedUrls.length < 1) {
             setGenErr('At least one URL required');
             return;
         }
@@ -31,12 +49,13 @@ const Fetcher = () => {
             setLoading(true)
             try {
                 setGenErr('')
+                console.log(`${storedURL}/fetch_metadata`)
                 const response = await fetch(`${storedURL}/fetch_metadata`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ urls: urls }),
+                    body: JSON.stringify({ urls: collectedUrls }),
                 });
 
                 const data = await response.json();
@@ -66,7 +85,10 @@ const Fetcher = () => {
 
                     return (
                         <div key={index}>
-                            <InputURL url_list={urls} setUrls={setUrls} index={index} />
+                            <InputURL
+                                value={urlInputs[index] || ''}
+                                onChange={(value) => handleInputChange(index, value)}
+                            />
                             {urlData && (
                                 <Result result={urlData} />
                             )}
@@ -74,7 +96,7 @@ const Fetcher = () => {
                     );
                 })}
 
-                {counter < 11 && <button className='add-field-btn' onClick={addField}>+ Add Field</button>}
+                {counter < 10 && <button className='add-field-btn' onClick={addField}>+ Add Field</button>}
 
                 <button type='submit' data-testid="submit-btn" className='submit-btn'>Fetch!</button>
             </form>
