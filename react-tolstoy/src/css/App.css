@@ -1,0 +1,44 @@
+:root {
+    --header-font: "Roboto Condensed", sans-serif;
+    --second-font: "Comfortaa", sans-serif;
+    --blue: #2F58CD;
+    --purple: #472183;
+    --light-gray: rgb(82, 80, 80);
+    justify-content: center;
+    display: flex;
+}
+
+.App {
+    text-align: center;
+    margin-top: 5rem;
+    max-width: 80vw;
+    min-width: 50vw;
+}
+
+.App h1 {
+    font-family: var(--header-font);
+    font-weight: 400;
+    color: var(--blue);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.App span {
+    font-family: var(--header-font);
+    font-weight: 400;
+    color: var(--purple);
+    font-size: 3rem;
+}
+
+.App h3 {
+    font-family: var(--second-font);
+    color: rgb(41, 40, 40);
+    font-size: 1.6rem;
+    margin-top: 0;
+}
+
+.err-msg {
+    color: red;
+    font-family: var(--header-font);
+    font-size: 1.5rem;
+}
