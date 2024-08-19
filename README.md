@@ -1,4 +1,4 @@
-# Fetcher - Home Assignment for Tolstoy Application
+# Fetcher - Home Asigment for Tolstoy Application
 
 ## About
 
