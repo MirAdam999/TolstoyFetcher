@@ -32,10 +32,12 @@ https://mirshukhman.github.io/TolstoyFetcher/
 To set up on your local system:
 
 **1. Clone from git repo** 
+
 Set up an empty directory, open git bash in the directory, and run:
   - git clone https://github.com/MirShukhman/TolstoyFetcher
 
 **2. Setup Server** 
+
 Navigate to 'node-tolstoy' directory in the terminal and run:
   - npm install express axios express-rate-limit helmet metascraper metascraper-image metascraper-title metascraper-description cors puppeteer
   - node index.js
