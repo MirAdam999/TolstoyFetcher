@@ -30,24 +30,25 @@ https://mirshukhman.github.io/TolstoyFetcher/
 
 ## Set Up 
 To set up on your local system:
-**1.Clone from git repo** 
+
+**1. Clone from git repo** 
 Set up an empty directory, open git bash in the directory, and run:
   - git clone https://github.com/MirShukhman/TolstoyFetcher
 
-**2.Setup Server** 
+**2. Setup Server** 
 Navigate to 'node-tolstoy' directory in the terminal and run:
   - npm install express axios express-rate-limit helmet metascraper metascraper-image metascraper-title metascraper-description cors puppeteer
   - node index.js
  The server should be up and running.
 
-**3.Setup Frontend**
+**3. Setup Frontend**
 Navigate to 'react-tolstoy' directory in the terminal and run:
   - npm install
   - npm start
 Now you have the server and the client running on the local machine.
 Navigate to http://localhost:3000 in your browser to check it out.
 
-**4.Tests**
+**4. Tests**
  - Backend: navigate to 'node-tolstoy' directory in the terminal and run: npx jest
  - Frontend: navigate to 'react-tolstoy' directory in the terminal and run: npm test
 
