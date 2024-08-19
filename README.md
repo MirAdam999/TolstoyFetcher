@@ -39,14 +39,14 @@ Set up an empty directory, open git bash in the directory, and run:
 Navigate to 'node-tolstoy' directory in the terminal and run:
   - npm install express axios express-rate-limit helmet metascraper metascraper-image metascraper-title metascraper-description cors puppeteer
   - node index.js
-  - 
+    
  The server should be up and running.
 
 **3. Setup Frontend**
 Navigate to 'react-tolstoy' directory in the terminal and run:
   - npm install
   - npm start
-  - 
+    
 Now you have the server and the client running on the local machine.
 Navigate to http://localhost:3000 in your browser to check it out.
 
@@ -55,4 +55,4 @@ Navigate to http://localhost:3000 in your browser to check it out.
  - Frontend: navigate to 'react-tolstoy' directory in the terminal and run: npm test
 
 
-~Created By Mir Shukhman~
+Created By Mir Shukhman
