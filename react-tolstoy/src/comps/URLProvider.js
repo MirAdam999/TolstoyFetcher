@@ -3,7 +3,7 @@ import React, { createContext, useContext } from 'react';
 const URLContext = createContext();
 
 const URLProvider = ({ children }) => {
-    const storedURL = 'http://localhost:5000';
+    const storedURL = 'https://7bee-2a06-c701-440a-a400-24d3-1e2-2303-12c3.ngrok-free.app';
 
     return (
         <URLContext.Provider
