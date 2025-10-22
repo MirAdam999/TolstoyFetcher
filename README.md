@@ -58,4 +58,4 @@ Navigate to http://localhost:3000 in your browser to check it out.
  - Frontend: navigate to 'react-tolstoy' directory in the terminal and run: npm test
 
 
-Created By Mir Shukhman
+Created By Miriam Adam
